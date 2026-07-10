@@ -55,7 +55,10 @@ const Verifications: React.FC = () => {
 
       <VerificationDetailModal
         item={selected}
-        busy={!!vm.busyId && vm.busyId === selected?._id}
+        onApproveBusy={
+          vm.busyId === selected?._id && vm.busyAction === 'approve'
+        }
+        onRejectBusy={vm.busyId === selected?._id && vm.busyAction === 'reject'}
         onClose={() => setSelected(null)}
         onApprove={handleApprove}
         onReject={setRejectTarget}

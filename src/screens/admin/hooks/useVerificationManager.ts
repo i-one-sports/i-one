@@ -19,6 +19,9 @@ export const useVerificationManager = () => {
   const [total, setTotal] = useState(0)
   const [loading, setLoading] = useState(true)
   const [busyId, setBusyId] = useState<string | null>(null)
+  const [busyAction, setBusyAction] = useState<'approve' | 'reject' | null>(
+    null
+  )
 
   const [filter, setFilter] = useState<FilterValue>('ALL')
   const [query, setQuery] = useState('')
@@ -48,6 +51,7 @@ export const useVerificationManager = () => {
   const approve = useCallback(
     async (item: Verification) => {
       setBusyId(item._id)
+      setBusyAction('approve')
       try {
         const res = await approveVerification(item._id)
         patchItem({ ...item, status: 'APPROVED', rejectionReason: null })
@@ -72,6 +76,7 @@ export const useVerificationManager = () => {
   const reject = useCallback(
     async (item: Verification, reason: string) => {
       setBusyId(item._id)
+      setBusyAction('reject')
       try {
         await rejectVerification(item._id, reason)
         patchItem({ ...item, status: 'REJECTED', rejectionReason: reason })
@@ -116,6 +121,7 @@ export const useVerificationManager = () => {
     total,
     loading,
     busyId,
+    busyAction,
     filter,
     setFilter,
     query,
