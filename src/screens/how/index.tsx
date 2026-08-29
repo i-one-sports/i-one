@@ -1,5 +1,8 @@
 import TwLayout from '@/components/layouts/Tw'
-
+import HowItWorksCard from '@/components/HowItWorksCard'
+import { FaUsers } from 'react-icons/fa'
+import { FaLocationDot, FaScaleBalanced } from 'react-icons/fa6'
+import { IoStatsChart } from 'react-icons/io5'
 
 import * as React from 'react'
 
@@ -11,58 +14,65 @@ const How = () => {
           Spend Less Time Being Indecisive
         </p>
         <p className=" text-primaryLight max-w-[600px] text-sm lg:text-lg play-fair font-normal text-center">
-                  schedule matches, book a session, create team formations, join a team, and track your stats both at the team and player level  with i-One.
-
+          schedule matches, book a session, create team formations, join a team,
+          and track your stats both at the team and player level with i-One.
         </p>
-        <div className="flex flex-col lg:flex-row gap-3 lg:gap-[132px] mt-10">
-          <div className="flex flex-col gap-5  items-center">
-            <svg
-              width="50"
-              height="50"
-              viewBox="0 0 50 50"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M25 0L50 25L25 50L0 25L25 0Z" fill="#FFBD69" />
-            </svg>
-            <p className="text-[15px] font-light text-primaryLight">
-              Create An Account
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10 w-full max-w-6xl mx-auto justify-center">
+          <HowItWorksCard
+            icon={FaLocationDot}
+            iconColor="#FF7A9E"
+            iconSize={24}
+            title="Find A Pitch"
+            description="Search for a pitch near you and check availability. Book a session that works for your squad."
+          />
+          <HowItWorksCard
+            icon={FaUsers}
+            iconColor="#63CBF4"
+            title="Fill Your Squad"
+            description="Bring your players together and build your team. Invite friends and add everyone to your lineup."
+          />
+          <HowItWorksCard
+            icon={FaScaleBalanced}
+            iconColor="#A78BFA"
+            iconSize={24}
+            title="Get Fair Teams"
+            description="Let i-One balance the sides for you. Squads are split fairly so every match stays competitive."
+          />
+          <HowItWorksCard
+            icon={IoStatsChart}
+            iconColor="#00FF94"
+            title="Play & Track"
+            description="Review your performance and keep getting better. See your stats at both the team and player level."
+          />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-20 w-full max-w-6xl mx-auto">
+          <div className="flex flex-col gap-4 p-6 justify-center items-start bg-white shadow-md rounded-3xl">
+            <span className="mt-2 px-4 py-2 uppercase rounded-full bg-primary text-white text-xs font-medium">
+              for players
+            </span>
+            <p className="text-lg lg:text-2xl font-semibold text-black play-fair">
+              Just want to play?
+            </p>
+            <p className="text-sm lg:text-base text-primaryLight max-w-md leading-6">
+              Sign up in seconds, find a game near you, and jump in. Build a
+              profile that actually tracks how you play over time. The goals,
+              the assists, the trophies. Whether it's for fun or something
+              bigger, your record follows you.
             </p>
           </div>
-          <div className="flex flex-col gap-5  items-center">
-            <svg
-              width="48"
-              height="46"
-              viewBox="0 0 48 46"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M24 0L47.7764 17.2746L38.6946 45.2254H9.30537L0.223587 17.2746L24 0Z"
-                fill="#00FF94"
-              />
-            </svg>
-
-            <p className="text-[15px] font-light text-primaryLight">
-              Secure A Game Slot
+          <div className="flex flex-col gap-4 p-6 justify-center items-start bg-black rounded-3xl shadow-md">
+            <span className="mt-2 px-4 py-2 uppercase rounded-full bg-primary text-white text-xs font-medium">
+              for pitch owners
+            </span>
+            <p className="text-lg lg:text-2xl font-semibold text-white play-fair">
+              Own a pitch? Fill it and get paid
             </p>
-          </div>
-          <div className="flex flex-col gap-5  items-center">
-            <svg
-              width="44"
-              height="50"
-              viewBox="0 0 44 50"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M22 0L43.6506 12.5V37.5L22 50L0.349365 37.5V12.5L22 0Z"
-                fill="#63CBF4"
-              />
-            </svg>
-
-            <p className="text-[15px] font-light text-primaryLight">
-              Track Your After Match Stats
+            <p className="text-sm lg:text-base text-white/70 max-w-md leading-6">
+              List your pitch, host friendlies and tournaments, and let i-One
+              handle bookings and payments. Money from every session lands in
+              your wallet automatically. Withdraw straight to your bank.
+              Verified owners only, so players know it's real
             </p>
           </div>
         </div>

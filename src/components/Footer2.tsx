@@ -13,7 +13,7 @@ const Footer2 = () => {
         </div>
         <div>
           <p className="text-[14px]  text-[#667185]">
-            © 2025 I-One. All rights reserved.
+            © {new Date().getFullYear()} I-One. All rights reserved.
           </p>
         </div>
         <div className="flex  gap-[15px]  items-center">

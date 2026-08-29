@@ -10,7 +10,8 @@ import type { Verification } from '@/api/admin'
 
 interface VerificationDetailModalProps {
   item: Verification | null
-  busy: boolean
+  onApproveBusy: boolean
+  onRejectBusy: boolean
   onClose: () => void
   onApprove: (item: Verification) => void
   onReject: (item: Verification) => void
@@ -18,7 +19,8 @@ interface VerificationDetailModalProps {
 
 const VerificationDetailModal: React.FC<VerificationDetailModalProps> = ({
   item,
-  busy,
+  onApproveBusy,
+  onRejectBusy,
   onClose,
   onApprove,
   onReject,
@@ -98,7 +100,7 @@ const VerificationDetailModal: React.FC<VerificationDetailModalProps> = ({
             <Button
               variant="danger"
               icon={<X size={16} />}
-              loading={busy}
+              loading={onRejectBusy}
               onClick={() => onReject(item)}
             >
               Reject
@@ -106,7 +108,7 @@ const VerificationDetailModal: React.FC<VerificationDetailModalProps> = ({
             <Button
               variant="success"
               icon={<Check size={16} />}
-              loading={busy}
+              loading={onApproveBusy}
               onClick={() => onApprove(item)}
             >
               Approve & create wallet
