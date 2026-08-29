@@ -41,7 +41,8 @@ const Footer: React.FC = () => {
               Build your squad, own the match
             </p>
             <p className="text-[13px] lg:text-base font-light text-center">
-              From squads to pitches, we make it simple to set up and play anywhere.
+              From squads to pitches, we make it simple to set up and play
+              anywhere.
             </p>
             <Link
               to="/role"
@@ -61,7 +62,8 @@ const Footer: React.FC = () => {
               />
             </a>
             <p>
-              © 2025 I-One. All rights reserved. | Owned by I-one-sports ltd
+              © {new Date().getFullYear()} I-One. All rights reserved. | Owned
+              by I-one-sports ltd
             </p>
 
             <div className="flex justify-between gap-3">

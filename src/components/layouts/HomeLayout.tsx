@@ -40,10 +40,10 @@ const HomeLayout: React.FC<HomeLayoutProps> = ({ children, activeNavId }) => {
   const handleProfile = () => {
     setProfile(prev => !prev)
   }
-const handleDeleteAccount = () => {
-  console.log("Account deleted")
-  setIsDeleteModalOpen(false)
-}
+  const handleDeleteAccount = () => {
+    console.log('Account deleted')
+    setIsDeleteModalOpen(false)
+  }
   // Detect current path on component mount and window location changes
   useEffect(() => {
     // Get current path
@@ -113,10 +113,11 @@ const handleDeleteAccount = () => {
                         <div
                           key={item.id}
                           onClick={() => handleNavClick(item.path)}
-                          className={` hover:text-primary font-medium px-3 py-2 transition-colors duration-200 cursor-pointer ${activeId === item.id
-                            ? 'text-black font-extrabold border-b-2 border-primary'
-                            : 'text-gray-400'
-                            }`}
+                          className={` hover:text-primary font-medium px-3 py-2 transition-colors duration-200 cursor-pointer ${
+                            activeId === item.id
+                              ? 'text-black font-extrabold border-b-2 border-primary'
+                              : 'text-gray-400'
+                          }`}
                         >
                           {item.name}
                         </div>
@@ -173,8 +174,9 @@ const handleDeleteAccount = () => {
                 <div
                   key={item.id}
                   onClick={() => handleNavClick(item.path)}
-                  className={` hover:text-primary block px-3 py-2 text-base font-medium cursor-pointer ${activeId === item.id ? 'text-primary' : 'text-gray-400'
-                    }`}
+                  className={` hover:text-primary block px-3 py-2 text-base font-medium cursor-pointer ${
+                    activeId === item.id ? 'text-primary' : 'text-gray-400'
+                  }`}
                 >
                   {item.name}
                 </div>
@@ -184,20 +186,24 @@ const handleDeleteAccount = () => {
         </div>
       </nav>
       <div
-        className={`fixed inset-0 cursor-pointer z-50 bg-black/30 transition-all duration-700 ${profile
-          ? 'opacity-100 pointer-events-auto'
-          : 'opacity-0 pointer-events-none'
-          }`}
+        className={`fixed inset-0 cursor-pointer z-50 bg-black/30 transition-all duration-700 ${
+          profile
+            ? 'opacity-100 pointer-events-auto'
+            : 'opacity-0 pointer-events-none'
+        }`}
         onClick={handleProfile}
       >
         <div
-          className={`absolute top-0 cursor-arrow h-full right-0 bg-white shadow-lg transition-all duration-700 ${profile ? 'lg:w-[500px] w-[300px]' : 'w-0 whitespace-nowrap'
-            }`}
+          className={`absolute top-0 cursor-arrow h-full right-0 bg-white shadow-lg transition-all duration-700 ${
+            profile ? 'lg:w-[500px] w-[300px]' : 'w-0 whitespace-nowrap'
+          }`}
           onClick={e => e.stopPropagation()}
         >
-          <div className={`transition-all  overflow-y-auto h-full w-full duration-700 ${profile
-              ? 'opacity-100 pointer-events-auto'
-              : 'opacity-0 pointer-events-none'
+          <div
+            className={`transition-all  overflow-y-auto h-full w-full duration-700 ${
+              profile
+                ? 'opacity-100 pointer-events-auto'
+                : 'opacity-0 pointer-events-none'
             }`}
           >
             <div className="md:py-[50px] py-[20px] whitespace-nowrap flex flex-col gap-[5px] px-[20px] md:px-[35px]">
@@ -248,23 +254,27 @@ const handleDeleteAccount = () => {
               </div>
               <button
                 onClick={() => setIsLogoutModalOpen(true)}
-                className="flex md:mt-[50px] mt-[30px] cursor-pointer items-center gap-[22px] w-full text-left py-2 text-sm">
+                className="flex md:mt-[50px] mt-[30px] cursor-pointer items-center gap-[22px] w-full text-left py-2 text-sm"
+              >
                 <div className="rotate-180 flex justify-center items-center w-[64px] bg-[#FF00000D] h-[64px] rounded-full">
                   <CiLogout className="text-black" size={24} />
                 </div>
                 <p className=" text-[14px] md:text-[20px]">Logout</p>
               </button>
               <button
-  onClick={() => setIsDeleteModalOpen(true)}
-  className="flex mt-[20px] cursor-pointer items-center gap-[22px] w-full text-left py-2 text-sm"
->
-  <div className="flex justify-center items-center w-[64px] bg-red-100 h-[64px] rounded-full">
-    <CiLogout className="text-red-600" size={24} />
-  </div>
-  <Link to="/delete-account" className="text-[14px] md:text-[20px] text-red-600">
-    Delete Account
-  </Link>
-</button>
+                onClick={() => setIsDeleteModalOpen(true)}
+                className="flex mt-[20px] cursor-pointer items-center gap-[22px] w-full text-left py-2 text-sm"
+              >
+                <div className="flex justify-center items-center w-[64px] bg-red-100 h-[64px] rounded-full">
+                  <CiLogout className="text-red-600" size={24} />
+                </div>
+                <Link
+                  to="/delete-account"
+                  className="text-[14px] md:text-[20px] text-red-600"
+                >
+                  Delete Account
+                </Link>
+              </button>
             </div>
           </div>
         </div>
