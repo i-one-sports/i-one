@@ -9,11 +9,11 @@ import * as React from 'react'
 const How = () => {
   return (
     <TwLayout>
-      <div className="flex flex-col mx-auto justify-center items-center gap-3 px-5 pt-[44px] lg:pt-[89px] play-fair ">
-        <p className="text-[#000] text-base lg:text-3xl play-fair font-semibold text-center">
+      <div className="flex flex-col mx-auto justify-center items-center gap-3 px-5 pt-[44px] lg:pt-[89px] lg:pb-[100px]">
+        <p className="text-[#000] text-2xl lg:text-5xl font-semibold text-center">
           Spend Less Time Being Indecisive
         </p>
-        <p className=" text-primaryLight max-w-[600px] text-sm lg:text-lg play-fair font-normal text-center">
+        <p className=" text-primaryLight max-w-[600px] text-sm lg:text-lg font-normal text-center">
           schedule matches, book a session, create team formations, join a team,
           and track your stats both at the team and player level with i-One.
         </p>
@@ -51,7 +51,7 @@ const How = () => {
             <span className="mt-2 px-4 py-2 uppercase rounded-full bg-primary text-white text-xs font-medium">
               for players
             </span>
-            <p className="text-lg lg:text-2xl font-semibold text-black play-fair">
+            <p className="text-lg lg:text-2xl font-semibold text-black">
               Just want to play?
             </p>
             <p className="text-sm lg:text-base text-primaryLight max-w-md leading-6">
@@ -65,7 +65,7 @@ const How = () => {
             <span className="mt-2 px-4 py-2 uppercase rounded-full bg-primary text-white text-xs font-medium">
               for pitch owners
             </span>
-            <p className="text-lg lg:text-2xl font-semibold text-white play-fair">
+            <p className="text-lg lg:text-2xl font-semibold text-white">
               Own a pitch? Fill it and get paid
             </p>
             <p className="text-sm lg:text-base text-white/70 max-w-md leading-6">

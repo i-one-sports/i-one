@@ -16,7 +16,7 @@ const Home = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
-          className="text-[#000] text-base md:text-[2xl] max-w-[800px] lg:text-4xl lg:leading-[50px] play-fair font-semibold text-center"
+          className="text-[#000] text-2xl md:text-[2xl] max-w-5xl lg:text-5xl lg:leading-[60px] font-semibold text-center"
         >
           Simplifying Football management for teams and players at a non-pro
           level.
@@ -25,7 +25,7 @@ const Home = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9 }}
-          className=" text-primaryLight max-w-[600px] text-sm lg:text-lg play-fair font-normal text-center"
+          className=" text-primaryLight max-w-[600px] text-sm lg:text-lg font-normal text-center"
         >
           Find a pitch near you, get enough players together, split the cost,
           and get picked into fair teams then track every goal, assist and clean

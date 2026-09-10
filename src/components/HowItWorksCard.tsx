@@ -14,7 +14,7 @@ const HowItWorksCard: React.FC<HowItWorksCardProps> = ({
   iconColor,
   iconSize = 26,
   title,
-  description
+  description,
 }) => {
   return (
     <div className="flex flex-col gap-4 items-center p-4 rounded-3xl bg-white shadow-md">
@@ -24,7 +24,9 @@ const HowItWorksCard: React.FC<HowItWorksCardProps> = ({
       >
         <Icon className="text-white" size={iconSize} />
       </div>
-      <p className="text-[15px] font-light text-black text-center">{title}</p>
+      <p className="text-[15px] text-black text-center font-semibold">
+        {title}
+      </p>
       <p className="text-sm text-primaryLight text-center leading-5">
         {description}
       </p>
