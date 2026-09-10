@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 const Footer: React.FC = () => {
   return (
     <div className="overflow-x-hidden overflow-y-hidden">
-      <div className="relative flex flex-col px-5 lg:px-[120px] justify-center items-center mx-auto  gap-5 md:gap-[10px] lg:gap-[80px] py-[50px]">
+      <div className="relative flex flex-col px-5 lg:px-[120px] justify-center items-center mx-auto  gap-5 md:gap-[10px] lg:gap-[80px] py-[60px]">
         <div className="flex flex-col ">
           <div className="flex mt-2 flex-col lg:flex-row items-center justify-center lg:justify-end lg:items-end gap-4 relative z-20 w-full font-sans mx-auto lg:mx-0">
             <a
@@ -41,7 +41,8 @@ const Footer: React.FC = () => {
               Build your squad, own the match
             </p>
             <p className="text-[13px] lg:text-base font-light text-center">
-              From squads to pitches, we make it simple to set up and play anywhere.
+              From squads to pitches, we make it simple to set up and play
+              anywhere.
             </p>
             <Link
               to="/role"
@@ -61,7 +62,8 @@ const Footer: React.FC = () => {
               />
             </a>
             <p>
-              © 2025 I-One. All rights reserved. | Owned by I-one-sports ltd
+              © {new Date().getFullYear()} I-One. All rights reserved. | Owned
+              by I-one-sports ltd
             </p>
 
             <div className="flex justify-between gap-3">

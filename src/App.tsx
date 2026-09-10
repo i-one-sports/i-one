@@ -26,7 +26,9 @@ const ResetPassword = React.lazy(
   () => import('./screens/reset-password/Index.js')
 )
 const SignIn = React.lazy(() => import('./screens/sign-in/index.js'))
-const ResetSuccess = React.lazy(() => import('./screens/reset-success/index.js'))
+const ResetSuccess = React.lazy(
+  () => import('./screens/reset-success/index.js')
+)
 const Homepage = React.lazy(() => import('./screens/Homepage/index.js'))
 const Schedule = React.lazy(() => import('./screens/schedule/index.js'))
 const Tournaments = React.lazy(() => import('./screens/tournaments/index.js'))
@@ -35,11 +37,15 @@ const ScheduleDetail = React.lazy(
   () => import('./screens/schedule-detail/index.js')
 )
 const Lineup = React.lazy(() => import('./screens/upcoming-match/index.js'))
-const ProfileStats = React.lazy(() => import('./screens/profile-stats/index.js'))
+const ProfileStats = React.lazy(
+  () => import('./screens/profile-stats/index.js')
+)
 const Verify = React.lazy(() => import('./screens/verify/Index.js'))
 const LivePage = React.lazy(() => import('./screens/live-match/index.js'))
 const Privacy = React.lazy(() => import('./screens/privacy/index.js'))
-const DeleteAccount = React.lazy(() => import('./screens/DeleteAccount/index.js'))
+const DeleteAccount = React.lazy(
+  () => import('./screens/DeleteAccount/index.js')
+)
 
 // Admin area — lazily loaded as its own chunk.
 const AdminLayout = React.lazy(() => import('./screens/admin/AdminLayout.js'))
@@ -66,56 +72,56 @@ const AppContent = () => {
   return (
     <Router>
       <React.Suspense fallback={<RouteFallback />}>
-      <Routes>
-        {!isAuthenticated && (
-          <>
-            <Route path="/" element={<Home />} />
-            <Route path="/how-it-works" element={<How />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/role" element={<Role />} />
-            <Route path="/register" element={<SignUp />} />
-            <Route path="/sign-in" element={<SignIn />} />
-            <Route path="/forgot-password" element={<ForgetPassword />} />
-            <Route path="/verification" element={<Verify />} />
-            <Route path="/reset" element={<ResetPassword />} />
-            <Route path="/reset-success" element={<ResetSuccess />} />
-            <Route path="/privacy" element={<Privacy />} />
-          </>
-        )}
+        <Routes>
+          {!isAuthenticated && (
+            <>
+              <Route path="/" element={<Home />} />
+              <Route path="/how-it-works" element={<How />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/role" element={<Role />} />
+              <Route path="/register" element={<SignUp />} />
+              <Route path="/sign-in" element={<SignIn />} />
+              <Route path="/forgot-password" element={<ForgetPassword />} />
+              <Route path="/verification" element={<Verify />} />
+              <Route path="/reset" element={<ResetPassword />} />
+              <Route path="/reset-success" element={<ResetSuccess />} />
+              <Route path="/privacy" element={<Privacy />} />
+            </>
+          )}
 
-        {isAdmin && (
-          <>
-            <Route path="/admin" element={<AdminLayout />}>
-              <Route index element={<AdminDashboard />} />
-              <Route path="verifications" element={<Verifications />} />
-              <Route path="users" element={<AdminUsers />} />
-            </Route>
-            <Route path="*" element={<Navigate to="/admin" replace />} />
-          </>
-        )}
+          {isAdmin && (
+            <>
+              <Route path="/admin" element={<AdminLayout />}>
+                <Route index element={<AdminDashboard />} />
+                <Route path="verifications" element={<Verifications />} />
+                <Route path="users" element={<AdminUsers />} />
+              </Route>
+              <Route path="*" element={<Navigate to="/admin" replace />} />
+            </>
+          )}
 
-        {isAuthenticated && !isAdmin && (
-          <>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/schedule" element={<Schedule />} />
-            <Route path="/schedule-detail" element={<ScheduleDetail />} />
-            <Route path="/tournament" element={<Tournaments />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/upcoming-match" element={<Lineup />} />
-            <Route path="/profile-stats" element={<ProfileStats />} />
-            <Route path="/live-match" element={<LivePage />} />
-            {/* <Route path="/delete-account" element={<DeleteAccount />} /> */}
-          </>
-        )}
+          {isAuthenticated && !isAdmin && (
+            <>
+              <Route path="/" element={<Homepage />} />
+              <Route path="/schedule" element={<Schedule />} />
+              <Route path="/schedule-detail" element={<ScheduleDetail />} />
+              <Route path="/tournament" element={<Tournaments />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/upcoming-match" element={<Lineup />} />
+              <Route path="/profile-stats" element={<ProfileStats />} />
+              <Route path="/live-match" element={<LivePage />} />
+              {/* <Route path="/delete-account" element={<DeleteAccount />} /> */}
+            </>
+          )}
           <Route
-  path="/delete-account"
-  element={
-    <ProtectedRoute>
-      <DeleteAccount />
-    </ProtectedRoute>
-  }
-/>
-      </Routes>
+            path="/delete-account"
+            element={
+              <ProtectedRoute>
+                <DeleteAccount />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
       </React.Suspense>
     </Router>
   )
