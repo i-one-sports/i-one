@@ -42,6 +42,7 @@ const ProfileStats = React.lazy(
 )
 const Verify = React.lazy(() => import('./screens/verify/Index.js'))
 const LivePage = React.lazy(() => import('./screens/live-match/index.js'))
+const Terms = React.lazy(() => import('./screens/terms/index.js'))
 const Privacy = React.lazy(() => import('./screens/privacy/index.js'))
 const DeleteAccount = React.lazy(
   () => import('./screens/DeleteAccount/index.js')
@@ -85,6 +86,7 @@ const AppContent = () => {
               <Route path="/verification" element={<Verify />} />
               <Route path="/reset" element={<ResetPassword />} />
               <Route path="/reset-success" element={<ResetSuccess />} />
+              <Route path="/terms" element={<Terms />} />
               <Route path="/privacy" element={<Privacy />} />
             </>
           )}
